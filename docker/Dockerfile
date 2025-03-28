@@ -111,6 +111,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 RUN rm -rvf /root/.cache/pip
 
-COPY ../web_demo.py ./
+COPY ./web_demo.py ./
 
 EXPOSE 80
