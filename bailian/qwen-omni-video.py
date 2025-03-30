@@ -125,8 +125,8 @@ def init_openai_client():
 
 def ask_video_question(client, base64_video):
     return client.chat.completions.create(
-        # model="qwen-omni-turbo",
-        model="qwen2.5-omni-7b",
+        model="qwen-omni-turbo",
+        # model="qwen2.5-omni-7b",
         messages=[
             {
                 "role": "system",
@@ -212,7 +212,7 @@ def launch_gui():
     timer_running = False
 
     root = tk.Tk()
-    root.title("音视频录制工具")
+    root.title("qwen-omni-video-demo")
     window_width, window_height = 320, 240
 
     # 设置窗口大小并居中显示
