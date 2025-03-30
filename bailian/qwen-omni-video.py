@@ -125,7 +125,8 @@ def init_openai_client():
 
 def ask_video_question(client, base64_video):
     return client.chat.completions.create(
-        model="qwen-omni-turbo",
+        # model="qwen-omni-turbo",
+        model="qwen2.5-omni-7b",
         messages=[
             {
                 "role": "system",
@@ -138,7 +139,7 @@ def ask_video_question(client, base64_video):
                 "role": "user",
                 "content": [
                     {"type": "video_url", "video_url": {"url": f"data:;base64,{base64_video}"}},
-                    {"type": "text", "text": "理解视频的内容，并回答问题。"},
+                    {"type": "text", "text": "理解视频的内容，并回答语音里的问题。 "},
                 ]
             }
         ],
